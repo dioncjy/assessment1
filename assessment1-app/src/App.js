@@ -11,11 +11,13 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Assessment1 App</h1>
-      <AuthorForm addAuthor={addAuthor} />
-      <AuthorList authors={authors} />
-      <UserList />
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold text-center mb-8">GovTech DevOps Internship Assessment1 App</h1>
+      <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+        <AuthorForm addAuthor={addAuthor} />
+        <AuthorList authors={authors} />
+        <UserList />
+      </div>
     </div>
   );
 }

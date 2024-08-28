@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import AuthorForm from './components/AuthorForm';
+import AuthorList from './components/AuthorList';
+import UserList from './components/UserList';
 
 function App() {
+  const [authors, setAuthors] = useState([]);
+
+  const addAuthor = (authorName) => {
+    setAuthors([...authors, authorName]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Assessment1 App</h1>
+      <AuthorForm addAuthor={addAuthor} />
+      <AuthorList authors={authors} />
+      <UserList />
     </div>
   );
 }
